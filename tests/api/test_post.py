@@ -12,10 +12,15 @@ def test_my_user():
 
 @pytest.mark.django_db
 def test_post():
-    payload = {
+    req = {
     "dish_name": "onemorefood1"
     }
-    response = client.post('/api/v1/dish/add/',payload)
+    response = client.post('/api/v1/dish/add/',req)
     data = response.data
 
-    assert data["dish_name"] == payload["dish_name"]
+    assert data["dish_name"] == req["dish_name"]
+
+@pytest.mark.django_db
+def test_get():
+    response = client.get('/api/v1/menu-dish/list/')
+    assert response.status_code == 200

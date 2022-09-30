@@ -86,7 +86,8 @@ DATABASES = {
         'HOST': 'db',
         'PORT': 5432,
         'TEST': {
-            'MIRROR': 'test',
+        'MIRROR': 'test',
+        'NAME': 'test',
         }
     }
 }
